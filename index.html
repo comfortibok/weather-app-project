@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/index.css" />
+  </head>
+  <body>
+    <div class="weather-app">
+      <header>
+        <form id="form">
+          <input type="text" placeholder="Enter a city.." id="search-input" />
+          <input type="submit" value="Search" />
+        </form>
+      </header>
+      <main>
+        <div class="weather-information-container">
+          <div class="weather-information">
+            <h1 id="city"></h1>
+            <p>
+              <span id="time"></span>, <span id="description"></span>
+              <br />
+              Humidity: <strong id="humidity"></strong>, Wind:
+              <strong id="windspeed"></strong>
+            </p>
+          </div>
+          <div class="temperature-information">
+            <img id="weather-icon" />
+            <h2 id="temperature"></h2>
+            <span>°C</span>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>
+          This project was coded by
+          <a href="https://github.com/comfortibok/" target="_blank"
+            >Comfort Ibok,</a
+          >
+          is <a href="https://github.com/comfortibok/weather-app-project" target="_blank"> open-sourced on GitHub</a> and
+          <a href="" target="_blank">hosted on Netlify</a>
+        </p>
+      </footer>
+    </div>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
