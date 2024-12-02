@@ -22,8 +22,13 @@ function searchTemperature(response) {
 
   let iconElement = document.getElementById("weather-icon");
   iconElement.src = response.data.condition.icon_url;
+  getForecast(response.data.coordinates);
 }
-
+function getForecast(coordinates) {
+  let apiKey = "5of280a2b12980f017dcf8ff8fda334t";
+let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecastInfo);
+}
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
@@ -62,10 +67,6 @@ function formatDay(timestamp) {
   return days[date.getDay()];
 }
 
-let apiKey = "5of280a2b12980f017dcf8ff8fda334t";
-let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-axios(apiUrl).then(displayForecastInfo);
-
 function displayForecastInfo(response) {
   let forecastHtml = "";
   response.data.daily.forEach(function (day, index) {
@@ -75,7 +76,7 @@ function displayForecastInfo(response) {
         `<div>
             <div class="weather-forecast-day">${formatDay(day.time)}</div>
             <div class="weather-forecast-symbol">
-          <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
+          <img src="${day.condition.icon_url}" class="weather-forecast-icon"/>
             </div>
             <div class="weather-forecast-temperature">
               <strong>${Math.round(

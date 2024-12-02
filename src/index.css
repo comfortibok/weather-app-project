@@ -95,23 +95,27 @@ h2 {
   margin-top: 20px;
   text-align: center;
 }
+
 .weather-forecast-day{
   color: rgba(39, 33, 66, 0.4);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
 }
+
 .weather-forecast-temperature{
   color: rgb(246, 82, 130);
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.5;
 }
-.weather-forecast-symbol{
-  font-size: 38px;
-  }
+
+.weather-forecast-temperature strong{
+  margin-right: 10px;
+}
+
 footer p {
   border-top: 1px solid rgb(249, 247, 254);
-  padding-top: 20px;
+  padding-top: 18px;
   color: rgba(0, 0, 0, 0.6);
   text-align: center;
   font-size: 14px;
